@@ -9,10 +9,10 @@ mongoose.connect(mongoUrl)
 
 const db = mongoose.connection
 
-db.on('error', console.error.bind(console, 'connection error:'))
+db.on('error', ()=>{})
 
 db.once('open', function() {
-  const user = new User({userName: 'strong', password: '123456'})
+  const user = new User({userName: 'strong', password: 'sdfsdfsef', age: 23})
   user.save()
 });
 
@@ -23,7 +23,7 @@ const app = new Koa();
 
 // response
 app.use(ctx => {
-  ctx.body = 'Hello Koa1'
+  ctx.body = 'Hello 热更新代码'
 });
 
 
